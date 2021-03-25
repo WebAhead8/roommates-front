@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import About from "./components/About";
 import Allposts from "./components/Allposts";
-import Allprofiles from "./components/Allprofiles";
+import AllProfiles from "./components/AllProfiles";
 import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
 import MyProfile from "./components/MyProfile";
@@ -16,14 +16,14 @@ function App() {
       <div className="App">
         <Nav />
         <Switch>
-          <Route path="/" exact components={Home} />
-          <Route path="/about" components={About} />
-          <Route path="/allposts" components={Allposts} />
-          <Route path="/allprofiles" components={Allprofiles} />
-          <Route path="/login" components={LogIn} />
-          <Route path="/signup" components={SignUp} />
-          <Route path="/myprofile" components={MyProfile} />
-          <Route path="/comments" components={Comments} />
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/allposts" component={Allposts} />
+          <Route path="/allprofiles" component={AllProfiles} />
+          <Route path="/login" component={LogIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/myprofile" component={MyProfile} />
+          <Route path="/comments" component={Comments} />
         </Switch>
       </div>
     </Router>

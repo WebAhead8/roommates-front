@@ -1,6 +1,6 @@
 import React from "react";
 import getAllProfiles from "../fetches/fetchAllProfiles";
-import Profile from "./Profile";
+// import Profile from "./Profile";
 
 function AllProfiles() {
   const [allProfilesData, setAllProfilesData] = React.useState([]);
