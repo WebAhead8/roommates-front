@@ -1,8 +1,20 @@
 import React from "react";
-// import "./App.css";
+import fetchAllPosts from "../fetches/fetchAllPosts";
 
-function Allposts() {
-  return <h1>Posts!!!!!!!!! </h1>;
+function AllPosts() {
+  const [allPosts, setAllPosts] = React.useState([]);
+  React.useEffect(() => {
+    fetchAllPosts().then((data) => {
+      setAllPosts(data);
+    });
+  }, []);
+  return allPosts.map((postData) => (
+    <div>
+      <ul>
+        <li>{postData.post + "  -- name :" + postData.user_id}</li>
+      </ul>
+    </div>
+  ));
 }
 
-export default Allposts;
+export default AllPosts;
