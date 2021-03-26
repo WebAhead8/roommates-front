@@ -1,20 +1,43 @@
 import React from "react";
-import fetchAllPosts from "../fetches/fetchAllPosts";
+import { fetchAllPosts, fetchAddPost } from "../fetches/fetchAllPosts";
 
 function AllPosts() {
   const [allPosts, setAllPosts] = React.useState([]);
+  const [AddPost, setAddPost] = React.useState({ post: "", user_id: "3" });
   React.useEffect(() => {
     fetchAllPosts().then((data) => {
       setAllPosts(data);
     });
   }, []);
-  return allPosts.map((postData) => (
+
+  function HandelClick() {
+    fetchAddPost(AddPost)
+      .fetchAllPosts()
+      .then((data) => {
+        setAllPosts(data);
+      });
+  }
+
+  return (
     <div>
-      <ul>
-        <li>{postData.post + "  -- name :" + postData.user_id}</li>
-      </ul>
+      {allPosts.map((postData) => (
+        <div>
+          <ul>
+            <li>{postData.post + "  -- name :" + postData.user_id}</li>
+            <button>Delete Post</button>
+          </ul>
+        </div>
+      ))}
+      <input
+        value={AddPost}
+        onChange={(e) => setAddPost(e.target.value)}
+        placeholder="Add your post here "
+      ></input>
+      <button type="submit" onClick={HandelClick}>
+        Add Post
+      </button>
     </div>
-  ));
+  );
 }
 
 export default AllPosts;

@@ -18,7 +18,7 @@ function AllProfiles() {
   const allProfiles = allProfilesData.map((profile) => (
     <div>
       <li key={profile.id}>
-        <img src={profile.pic} />
+        <img alt=" " src={profile.pic} />
         <h3>{profile.username}</h3>
         <h5>{profile.age}</h5>
         <div>{profile.gender}</div>
