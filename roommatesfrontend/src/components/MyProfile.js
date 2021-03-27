@@ -1,5 +1,5 @@
 import React from "react";
-import getMyProfile from "../fetches/fetchMyProfile";
+import myProfileFetch from "../fetches/fetchMyProfile";
 
 function MyProfile() {
   const [myProfileData, setMyProfileData] = React.useState({});
@@ -9,16 +9,15 @@ function MyProfile() {
   React.useEffect(() => {
     // const token = window.localStorage.getItem("access_token");
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyLCJpYXQiOjE2MTY4NDcyMzIsImV4cCI6MTYxNjg1MDgzMn0.iVqziUSCvIYyfLojt0wYnbM_PO8wq9Nsef4SJ-MDZv8";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyLCJpYXQiOjE2MTY4NjIxMDMsImV4cCI6MTYxNjg2NTcwM30.GCF0q8Nb3npC2UKN97qIgSAXJ35wNr20BP7NzDC8Gdw";
     const url = `http://localhost:4000/myprofile`;
-    getMyProfile(url, token).then((data) => {
+    myProfileFetch.getMyProfile(url, token).then((data) => {
       setMyProfileData(data);
     });
   }, []);
-  console.log(myProfileData);
   React.useEffect(() => {
     const url = `http://localhost:4000/traits/${myProfileData.id}`;
-    getMyProfile(url).then((data) => {
+    myProfileFetch.getMyProfile(url).then((data) => {
       setTraitsData(data);
     });
   }, []);
@@ -43,6 +42,13 @@ function MyProfile() {
         <div>
           Traits: {traitsData ? traitsData.trait : <div>Not Found</div>}
         </div>
+        <button
+          onClick={() => {
+            window.location.href = `/mynewprofile`;
+          }}
+        >
+          Update My Profile
+        </button>
       </li>
     </div>
   );
