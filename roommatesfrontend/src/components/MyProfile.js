@@ -1,5 +1,6 @@
 import React from "react";
 import myProfileFetch from "../fetches/fetchMyProfile";
+import "../style/myprofile.css";
 
 function MyProfile() {
   const [myProfileData, setMyProfileData] = React.useState({});
@@ -9,7 +10,7 @@ function MyProfile() {
   React.useEffect(() => {
     // const token = window.localStorage.getItem("access_token");
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyLCJpYXQiOjE2MTY4NjIxMDMsImV4cCI6MTYxNjg2NTcwM30.GCF0q8Nb3npC2UKN97qIgSAXJ35wNr20BP7NzDC8Gdw";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjo1LCJpYXQiOjE2MTY4NzA0OTMsImV4cCI6MTYxNjg3NDA5M30.coNinA6dbUUk5hpFc0087z4z8pBt6CttLm4NiMK2LHc";
     const url = `http://localhost:4000/myprofile`;
     myProfileFetch.getMyProfile(url, token).then((data) => {
       setMyProfileData(data);
@@ -26,7 +27,7 @@ function MyProfile() {
   }
   //   console.log(profileData);
   const myProfileUser = (
-    <div>
+    <div className="myprofile">
       <li>
         <img src={myProfileData.pic} />
         <h3>username: {myProfileData.username}</h3>

@@ -2,28 +2,27 @@
   text-align: center;
 }
 
-.background{
+.background {
   background-color: black;
   height: 100%;
   width: 100%;
 }
 
-nav{
-  min-height:10vh;
-    background-color:rgb(0, 79, 158);
-    color: white;
-    margin-top: 0px;
-  }
-  
-  .nav-links{
-    
-    display:flex;
-    justify-content:space-around;
-   padding-top: 20px;
-    list-style: none;
-    font-weight: bold;
-  }
+nav {
+  min-height: 10vh;
+  background-color: rgb(0, 79, 158);
+  color: white;
+  margin-top: 0px;
+}
 
-  h1{
-    color: rgb(255, 255, 255);
-  }
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  list-style: none;
+  font-weight: bold;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}

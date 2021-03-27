@@ -16,13 +16,21 @@ function getMyProfile(url, token) {
     });
 }
 
-function updateMyProfile(url, token) {
+function updateMyProfile(url, addComment, token, postId) {
   return fetch(url, {
-    headers: { authorization: `${token}` },
+    method: "PUT",
+    body: JSON.stringify({
+      comment: addComment,
+      post_id: postId,
+    }),
+    headers: {
+      "Content-type": "application/json",
+      authorization: `${token}`,
+    },
   })
     .then(checkResponse)
     .catch((err) => {
-      throw new Error(`fetch getProfile failed ${err}`);
+      throw new Error(`fetch postData failed ${err}`);
     });
 }
 
