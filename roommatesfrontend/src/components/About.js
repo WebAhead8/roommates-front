@@ -1,8 +1,12 @@
 import React from "react";
-// import "./App.css";
+import "../App.css";
 
 function About() {
-  return <h1> world </h1>;
+  return (
+    <div className="background">
+      <h1> world </h1>
+    </div>
+  );
 }
 
 export default About;

@@ -1,8 +1,24 @@
 import React from "react";
-// import "./App.css";
 
 function Nav() {
-  return <h1>Hello world </h1>;
+  return (
+    <nav>
+      <ul className="nav-links">
+        <li className="nav-links-li">
+          <a href="/login">LogIn</a>
+        </li>
+        <li>
+          <a href="/signup">Sign Up</a>
+        </li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About Us</a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Nav;
