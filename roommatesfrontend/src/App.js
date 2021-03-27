@@ -10,6 +10,7 @@ import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
 import MyProfile from "./components/MyProfile";
 import Comments from "./components/Comments";
+import FindRoomate from "./components/Find";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/myprofile" component={MyProfile} />
           <Route path="/comments" component={Comments} />
           <Route path="/" exact component={Home} />
+          <Route path="/find" exact component={FindRoomate} />
         </Switch>
       </div>
     </Router>

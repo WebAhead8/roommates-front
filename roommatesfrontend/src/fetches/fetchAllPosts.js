@@ -33,4 +33,5 @@ function fetchAddPost(AddPost) {
     });
 }
 
-export { fetchAddPost, fetchAllPosts };
+export default fetchAllPosts;
+export { fetchAddPost };

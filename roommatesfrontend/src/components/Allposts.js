@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
-
-import { fetchAllPosts, fetchAddPost } from "../fetches/fetchAllPosts";
+import fetchAllPosts, { fetchAddPost } from "../fetches/fetchAllPosts";
 
 function AllPosts() {
   const [allPosts, setAllPosts] = React.useState([]);
@@ -26,6 +25,7 @@ function AllPosts() {
           </ul>
         </div>
       ))}
+
       <input
         value={AddPost}
         onChange={(e) => setAddPost(e.target.value)}
