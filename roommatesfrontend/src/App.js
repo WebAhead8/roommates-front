@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
+import Profile from "./components/Profile";
 import About from "./components/About";
 import AllPosts from "./components/Allposts";
 import AllProfiles from "./components/AllProfiles";
@@ -17,6 +18,7 @@ function App() {
       <div className="App">
         <Nav />
         <Switch>
+          <Route path="/profile/:id" component={Profile} />
           <Route path="/about" component={About} />
           <Route path="/allposts" component={AllPosts} />
           <Route path="/allprofiles" component={AllProfiles} />
