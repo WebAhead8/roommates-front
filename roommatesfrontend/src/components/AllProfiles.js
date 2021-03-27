@@ -2,6 +2,8 @@ import React from "react";
 import getAllProfiles from "../fetches/fetchAllProfiles";
 // import Profile from "./Profile";
 
+// import Profile from "./Profile";
+
 function AllProfiles() {
   const [allProfilesData, setAllProfilesData] = React.useState([]);
 
@@ -18,30 +20,23 @@ function AllProfiles() {
   const allProfiles = allProfilesData.map((profile) => (
     <div>
       <li key={profile.id}>
-        <img src={profile.pic} />
+        <img
+          src={profile.pic}
+          onClick={() => {
+            window.location.href = `/profile/${profile.id}`;
+          }}
+        />
         <h3>{profile.username}</h3>
-        <h5>{profile.age}</h5>
         <div>{profile.gender}</div>
-        <div>{profile.currentloc}</div>
-        <div>{profile.moveto}</div>
-        <div>{profile.university}</div>
-        <div>{profile.studying}</div>
+        <div>Move to {profile.moveto}</div>
 
         <button
           onClick={() => {
-            // <Profile></Profile>;
+            window.location.href = `/profile/${profile.id}`;
           }}
         >
           see more
         </button>
-
-        {/* <button
-          onClick={() => {
-            window.location.href = `/customerreview/${sketchy.id}`;
-          }}
-        >
-          Customres reviews
-        </button> */}
       </li>
     </div>
   ));
