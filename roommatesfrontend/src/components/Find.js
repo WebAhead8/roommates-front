@@ -1,9 +1,14 @@
-// import React from "react";
-// import getAllProfiles from "../fetches/fetchAllProfiles";
-// import fetchAllPosts from "../fetches/fetchAllPosts";
+import React from "react";
+import AllProfiles from "./AllProfiles";
+import AllPosts from "./Allposts";
 
-// function FindRoomate() {
-//   return <div>{fetchAllPosts()}</div>;
-// }
+function FindRoomate() {
+  return (
+    <div>
+      <AllPosts />
+      <AllProfiles />
+    </div>
+  );
+}
 
-// export default FindRoomate;
+export default FindRoomate;
