@@ -1,4 +1,6 @@
 import React from "react";
+import "../App.css";
+
 import { fetchAllPosts, fetchAddPost } from "../fetches/fetchAllPosts";
 
 function AllPosts() {
