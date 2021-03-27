@@ -13,11 +13,7 @@ function AllPosts() {
   }, []);
 
   function HandelClick() {
-    fetchAddPost(AddPost)
-      .fetchAllPosts()
-      .then((data) => {
-        setAllPosts(data);
-      });
+    fetchAddPost(AddPost);
   }
 
   return (
