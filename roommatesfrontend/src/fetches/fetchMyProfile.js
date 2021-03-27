@@ -16,4 +16,14 @@ function getMyProfile(url, token) {
     });
 }
 
-export default getMyProfile;
+function updateMyProfile(url, token) {
+  return fetch(url, {
+    headers: { authorization: `${token}` },
+  })
+    .then(checkResponse)
+    .catch((err) => {
+      throw new Error(`fetch getProfile failed ${err}`);
+    });
+}
+
+export default { getMyProfile, updateMyProfile };

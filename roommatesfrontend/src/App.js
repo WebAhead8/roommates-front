@@ -9,6 +9,7 @@ import AllProfiles from "./components/AllProfiles";
 import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
 import MyProfile from "./components/MyProfile";
+import MyNewProfile from "./components/MyNewProfile";
 import Comments from "./components/Comments";
 import FindRoomate from "./components/Find";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -26,7 +27,8 @@ function App() {
           <Route path="/login" component={LogIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/myprofile" component={MyProfile} />
-          <Route path="/comments" component={Comments} />
+          <Route path="/mynewprofile" component={MyNewProfile} />
+          <Route path="/comments/:postId" component={Comments} />
           <Route path="/" exact component={Home} />
           <Route path="/find" exact component={FindRoomate} />
         </Switch>
