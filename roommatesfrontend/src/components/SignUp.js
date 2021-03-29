@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "../style/Form.css";
+import "../style/SignUp.css";
 // import postUsers from "../fetches/fetchSignUp.js";
 
 function SignUp() {
@@ -20,7 +20,14 @@ function SignUp() {
       setWorrning("");
 
       // postUsers(signup);
-      localStorage.setItem("signup", JSON.stringify(signup));
+      localStorage.setItem(
+        "signup",
+        JSON.stringify({
+          username: signup.username,
+          pass: signup.pass,
+          email: signup.email,
+        })
+      );
       alert("Thank You For Joining Us");
       window.location.href = "/SignUp2";
     } else {
