@@ -9,10 +9,10 @@
 }
 
 nav {
-  min-height: 10vh;
   background-color: rgb(0, 79, 158);
   color: white;
-  margin-top: 0px;
+
+  /* display: flow-root; */
 }
 
 .nav-links {

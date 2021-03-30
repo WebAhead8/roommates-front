@@ -9,7 +9,7 @@ function MyProfile() {
 
   // const token = window.localStorage.getItem("access_token");
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyMywiaWF0IjoxNjE3MTA4NDk1LCJleHAiOjE2MTcxMTIwOTV9.c5dSu9mgktNOBU07OaRaChlskk0PjXWMYnNLg7Uhw-4";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxMywiaWF0IjoxNjE3MTQyMjQ3LCJleHAiOjE2MTcxNDU4NDd9.bdPmMhqeh7c0fOa69jr0VOJwvDRUHTSI3GLzrgv-708";
 
   async function updateMyProfile() {
     // console.log("nonono");
@@ -22,12 +22,6 @@ function MyProfile() {
     const url = `http://localhost:4000/myprofile`;
     // const urlTraits = `http://localhost:4000/traits/${myProfileData.id}`;
     myProfileFetch.getMyProfile(url, token).then((data) => {
-      console.log("dataaa:", data.id);
-      myProfileFetch
-        .getMyTraits(`http://localhost:4000/traits/${data.id}`)
-        .then((result) => {
-          setMyTraitsData(result);
-        });
       setMyProfileData(data);
     });
     // myProfileFetch.getMyTraits(url).then((data) => {
@@ -271,7 +265,8 @@ function MyProfile() {
         </div>
 
         <div>
-          Traits: {myTraitsData ? myTraitsData.trait : <div>Not Found</div>}
+          Traits:{" "}
+          {myProfileData.trait ? myProfileData.trait : <div>Not Found</div>}
         </div>
         <button
           onClick={() => {

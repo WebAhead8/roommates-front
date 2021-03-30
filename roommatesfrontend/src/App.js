@@ -9,7 +9,6 @@ import AllProfiles from "./components/AllProfiles";
 import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
 import SignUp2 from "./components/SignUp2";
-
 import MyProfile from "./components/MyProfile";
 import MyNewProfile from "./components/MyNewProfile";
 import Comments from "./components/Comments";

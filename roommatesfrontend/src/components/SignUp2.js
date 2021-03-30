@@ -43,8 +43,12 @@ function SignUp2() {
   }
 
   return (
-    <div className="cont">
-      <form onSubmit={handelClick} className="form">
+    <div>
+      <form onSubmit={handelClick} className="formm">
+        <label>
+          <h3>Few More Steps...</h3>
+          <br></br>
+        </label>
         <label>Gender</label>
         <select onChange={handelChange} name="gender">
           <option value="Male">Male</option>
