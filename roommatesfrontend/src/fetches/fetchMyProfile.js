@@ -16,22 +16,37 @@ function getMyProfile(url, token) {
     });
 }
 
-function updateMyProfile(url, addComment, token, postId) {
+function updateMyProfile(url, myprofile, token) {
   return fetch(url, {
     method: "PUT",
     body: JSON.stringify({
-      comment: addComment,
-      post_id: postId,
+      myprofile,
     }),
     headers: {
-      "Content-type": "application/json",
+      "content-type": "application/json",
       authorization: `${token}`,
     },
   })
     .then(checkResponse)
     .catch((err) => {
-      throw new Error(`fetch postData failed ${err}`);
+      throw new Error(`fetch updateData failed ${err}`);
     });
 }
 
-export default { getMyProfile, updateMyProfile };
+function getMyTraits(url) {
+  return fetch(
+    url
+    //   {
+    //   headers: {
+    //     authorization:
+    //       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyMiwiaWF0IjoxNjE3MTA0NzMyLCJleHAiOjE2MTcxMDgzMzJ9.M47SJCBrxeXjZOdYEZ2dVoinW2zs75vpqW-KRKSuDC8",
+    //   },
+    // }
+  )
+    .then(checkResponse)
+    .catch((err) => {
+      throw new Error(`fetch getMyTraits failed ${err}`);
+    });
+}
+
+export default { getMyProfile, updateMyProfile, getMyTraits };

@@ -48,5 +48,18 @@ function deleteComment(url, token) {
       throw new Error(`fetch deleteData failed ${err}`);
     });
 }
+function updateComment(url, token) {
+  return fetch(url, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+      authorization: `${token}`,
+    },
+  })
+    .then(checkResponse)
+    .catch((err) => {
+      throw new Error(`fetch deleteData failed ${err}`);
+    });
+}
 
-export default { getComments, postComment, deleteComment };
+export default { getComments, postComment, deleteComment, updateComment };
