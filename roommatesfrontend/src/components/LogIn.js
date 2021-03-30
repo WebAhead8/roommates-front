@@ -67,11 +67,12 @@ function Login() {
     );
   }
   return (
-    <div className="cont">
+    <div>
       <form className="form" onSubmit={onSubmit}>
-        <label> Type Your Login Information</label>
+        <label className="textt"> Type Your Login Information </label>
 
         <input
+          className="cont"
           type="email"
           name="email"
           id="email"
@@ -81,6 +82,7 @@ function Login() {
         />
 
         <input
+          className="cont"
           type="password"
           placeholder="Password"
           name="pass"

@@ -49,9 +49,9 @@ function SignUp() {
   return (
     <div className="cont">
       <form onSubmit={handelClick} className="form">
-        <label> Sign Up</label>
-
+        <h1>Sign Up</h1>
         <input
+          className="cont"
           type="text"
           placeholder="username"
           name="username"
@@ -62,6 +62,7 @@ function SignUp() {
         />
 
         <input
+          className="cont"
           type="email"
           placeholder="Email"
           onChange={handelChange}
@@ -70,6 +71,7 @@ function SignUp() {
         />
 
         <input
+          className="cont"
           type="password"
           placeholder="Password"
           name="pass"
@@ -80,6 +82,7 @@ function SignUp() {
         />
 
         <input
+          className="cont"
           type="password"
           placeholder="Confirm Password"
           name="user_pass2"
@@ -87,9 +90,8 @@ function SignUp() {
           required
         />
 
-        <i>
-          {/* className="toto" */} Already have an account?{" "}
-          <a href="/login"> Login </a>{" "}
+        <i className="toto">
+          {} Already have an account? <a href="/login"> Login </a>{" "}
         </i>
         <output className="error">{worrning}</output>
         <button type="submit">Next</button>
