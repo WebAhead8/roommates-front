@@ -12,7 +12,7 @@ nav {
   background-color: rgb(0, 79, 158);
   color: white;
 
-  display: flow-root;
+  /* display: flow-root; */
 }
 
 .nav-links {

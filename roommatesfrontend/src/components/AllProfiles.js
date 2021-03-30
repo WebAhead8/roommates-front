@@ -4,18 +4,18 @@ import getAllProfiles from "../fetches/fetchAllProfiles";
 
 // import Profile from "./Profile";
 
-function AllProfiles({ allProfilesData }) {
-  // const [allProfilesData, setAllProfilesData] = React.useState([]);
+function AllProfiles() {
+  const [allProfilesData, setAllProfilesData] = React.useState([]);
 
-  // React.useEffect(() => {
-  //   const url = `http://localhost:4000/users`;
-  //   getAllProfiles(url).then((data) => {
-  //     setAllProfilesData(data);
-  //   });
-  // }, []);
-  // if (!allProfilesData) {
-  //   return <h3>...Loading</h3>;
-  // }
+  React.useEffect(() => {
+    const url = `http://localhost:4000/users`;
+    getAllProfiles(url).then((data) => {
+      setAllProfilesData(data);
+    });
+  }, []);
+  if (!allProfilesData) {
+    return <h3>...Loading</h3>;
+  }
 
   const allProfiles = allProfilesData.map((profile) => (
     <div>

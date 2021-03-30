@@ -19,35 +19,40 @@ function Comments() {
   const urlGetComments = `http://localhost:4000/comments/${params.postId}`;
   // const token = window.localStorage.getItem("access_token");
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoyLCJpYXQiOjE2MTY4NTk3OTMsImV4cCI6MTYxNjg2MzM5M30.H2HqxkxfZsC5lvmKWwDVKBO_WP1eAj5nuW4qpZm3yqw";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjo1LCJpYXQiOjE2MTY5MjMzNzcsImV4cCI6MTYxNjkyNjk3N30.-6mLWpfwKtQMAtEnCPnRc9h6brKKseEIuhGvSnmDIdA";
 
   function HandelChangeAdding(event) {
     setComment(event.target.value);
   }
-  function HandelClickAdd() {
+  async function HandelClickAdd() {
     const urlPostComment = `http://localhost:4000/comment`;
-    commentsFetch.postComment(
+    await commentsFetch.postComment(
       urlPostComment,
       commentData,
       token,
       params.postId
     );
-    commentsFetch.getComments(urlGetComments).then((data) => {
+    await commentsFetch.getComments(urlGetComments).then((data) => {
       setUserName(data);
     });
   }
 
-  function HandelClickDelete(commentId) {
+  async function HandelClickDelete(commentId) {
     const urlDelComment = `http://localhost:4000/comment/${commentId}`;
-    commentsFetch.deleteComment(urlDelComment, token);
-    commentsFetch.getComments(urlGetComments).then((data) => {
+    await commentsFetch.deleteComment(urlDelComment, token);
+    await commentsFetch.getComments(urlGetComments).then((data) => {
       setUserName(data);
     });
   }
-
+  async function HandelClickUpdate(commentId) {
+    const urlDelComment = `http://localhost:4000/comment/${commentId}`;
+    await commentsFetch.updateComment(urlDelComment, token);
+    await commentsFetch.getComments(urlGetComments).then((data) => {
+      setUserName(data);
+    });
+  }
   React.useEffect(() => {
     commentsFetch.getComments(urlGetComments).then((data) => {
-      console.log(data);
       setUserName(data);
     });
   }, []);
@@ -66,6 +71,13 @@ function Comments() {
                 }}
               >
                 Delete
+              </button>
+              <button
+                onClick={() => {
+                  HandelClickUpdate(data.id);
+                }}
+              >
+                Update
               </button>
             </li>
           ))}
