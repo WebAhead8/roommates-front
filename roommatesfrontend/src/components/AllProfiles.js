@@ -4,23 +4,24 @@ import getAllProfiles from "../fetches/fetchAllProfiles";
 
 // import Profile from "./Profile";
 
-function AllProfiles() {
-  const [allProfilesData, setAllProfilesData] = React.useState([]);
+function AllProfiles({ allProfilesData }) {
+  // const [allProfilesData, setAllProfilesData] = React.useState([]);
 
-  React.useEffect(() => {
-    const url = `http://localhost:4000/users`;
-    getAllProfiles(url).then((data) => {
-      setAllProfilesData(data);
-    });
-  }, []);
-  if (!allProfilesData) {
-    return <h3>...Loading</h3>;
-  }
+  // React.useEffect(() => {
+  //   const url = `http://localhost:4000/users`;
+  //   getAllProfiles(url).then((data) => {
+  //     setAllProfilesData(data);
+  //   });
+  // }, []);
+  // if (!allProfilesData) {
+  //   return <h3>...Loading</h3>;
+  // }
 
   const allProfiles = allProfilesData.map((profile) => (
     <div>
-      <li key={profile.id}>
+      <li key={profile.id} style={{ margin: "0 10px" }}>
         <img
+          style={{ width: "100px", height: "100px" }}
           src={profile.pic}
           onClick={() => {
             window.location.href = `/profile/${profile.id}`;
@@ -41,7 +42,7 @@ function AllProfiles() {
     </div>
   ));
   return (
-    <ul className="grid">
+    <ul className="grid" style={{ display: "flex", flexWrap: "wrap" }}>
       {allProfiles.length ? allProfiles : <li>No results found</li>}
     </ul>
   );

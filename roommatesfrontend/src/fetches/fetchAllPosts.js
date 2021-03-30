@@ -32,6 +32,28 @@ function fetchAddPost(AddPost) {
       throw new Error(`fetch fetchAllPosts failed ${err}`);
     });
 }
+function fetchDeletePost(postID) {
+  return fetch(`http://localhost:4000/post/${postID}`, {
+    method: "DELETE",
+    body: JSON.stringify(),
+    headers: { "content-type": "application/json" },
+  })
+    .then(checkResponse)
+    .catch((err) => {
+      throw new Error(`fetch fetchAllPosts failed ${err}`);
+    });
+}
 
-export default fetchAllPosts;
-export { fetchAddPost };
+function fetchUpdate(postID) {
+  return fetch(`http://localhost:4000/post/${postID}`, {
+    method: "PUT",
+    body: JSON.stringify(),
+    headers: { "content-type": "application/json" },
+  })
+    .then(checkResponse)
+    .catch((err) => {
+      throw new Error(`fetch fetchAllPosts failed ${err}`);
+    });
+}
+
+export { fetchAllPosts, fetchAddPost, fetchDeletePost };
