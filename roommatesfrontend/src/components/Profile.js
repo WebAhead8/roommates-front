@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 function Profile() {
   const [profileData, setProfileData] = React.useState({});
-  const [traitsData, setTraitsData] = React.useState({});
+  // const [traitsData, setTraitsData] = React.useState({});
 
   const params = useParams();
 
@@ -14,12 +14,12 @@ function Profile() {
       setProfileData(data);
     });
   }, []);
-  React.useEffect(() => {
-    const url = `http://localhost:4000/traits/${params.id}`;
-    getProfile(url).then((data) => {
-      setTraitsData(data);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   const url = `http://localhost:4000/traits/${params.id}`;
+  //   getProfile(url).then((data) => {
+  //     setTraitsData(data);
+  //   });
+  // }, []);
   if (!profileData) {
     return <h3>...Loading</h3>;
   }
@@ -39,7 +39,8 @@ function Profile() {
         <div>roommates number: {profileData.roommatesnum}</div>
         <div>price for room: {profileData.price}</div>
         <div>
-          Traits: {traitsData ? traitsData.trait : <div>Not Found</div>}
+          {/* Traits: {traitsData ? traitsData.trait : <div>Not Found</div>} */}
+          Traits: {profileData.trait ? profileData.trait : <div>Not Found</div>}
         </div>
       </li>
     </div>
