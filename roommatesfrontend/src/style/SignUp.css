@@ -1,0 +1,106 @@
+:root {
+  --bg-color: #314e52;
+  --txt-color: #f2a154;
+  --text-light: #f7f6e7;
+  --text-d: #e7e6e1;
+}
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 20px;
+  border-radius: 5px;
+  height: 800px;
+}
+.form > * {
+  margin: 2px 12px;
+  padding: 10px;
+  width: 70%;
+}
+.form button {
+  margin-top: 10px;
+  background-color: var(--text-light);
+  color: var(--bg-color);
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  transition: all 0.3s ease 0s;
+}
+.form button:hover {
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  cursor: pointer;
+}
+.error {
+  color: rgb(201, 84, 37);
+}
+.toto {
+  color: #e7e6e1;
+}
+.toto a {
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--txt-color);
+}
+.products-add {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.prod-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.prod-form > * {
+  padding: 8px 12px;
+  margin: 10px;
+}
+.comm-sec button,
+.prod-form button {
+  padding: 15px 65px;
+  background-color: #f2a154;
+  border: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  margin-bottom: 50px;
+}
+.comm-sec button:hover,
+.prod-form button:hover {
+  cursor: pointer;
+  background-color: var(--bg-color);
+  color: white;
+}
+.comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.comm-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sin-com {
+  list-style: none;
+  padding: 8px 12px;
+  border: var(--bg-color) 2px solid;
+  margin: 5px;
+}
+.comm-sec input {
+  margin: 20px;
+  padding: 10px 30px;
+  font-size: 20px;
+}
