@@ -1,27 +1,39 @@
+body {
+  background-image: url(https://images.pexels.com/photos/2467506/pexels-photo-2467506.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-repeat: no-repeat;
+}
+
 :root {
-  --bg-color: #314e52;
-  --txt-color: #f2a154;
-  --text-light: #f7f6e7;
+  --bg-color: #000000;
+  --txt-color: rgb(27, 122, 199);
+  --text-light: #072ba3;
   --text-d: #e7e6e1;
 }
 .cont {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 .form {
-  background-color: var(--bg-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  display: block;
   width: 500px;
-  margin: 20px;
-  border-radius: 5px;
-  height: 800px;
+  height: 600px;
+  /* left: 380px; */
+  /* top: 212px; */
+  margin-top: 10%;
+  margin-bottom: 10%;
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+
+  background: #a8a6a6;
+  opacity: 0.8;
 }
 .form > * {
-  margin: 2px 12px;
+  margin: 10px auto 5px;
+  /* margin: 2px 12px; */
   padding: 10px;
   width: 70%;
 }
@@ -34,6 +46,7 @@
   padding: 10px;
   width: 50%;
   transition: all 0.3s ease 0s;
+  width: 70%;
 }
 .form button:hover {
   background-color: var(--txt-color);
@@ -41,10 +54,16 @@
   cursor: pointer;
 }
 .error {
-  color: rgb(201, 84, 37);
+  display: flex;
+  justify-content: center;
+  margin: -9px auto;
+  align-items: center;
+  color: rgb(201, 37, 37);
+  font-size: large;
 }
 .toto {
   color: #e7e6e1;
+  font-size: large;
 }
 .toto a {
   text-decoration: none;
@@ -71,7 +90,7 @@
   padding: 15px 65px;
   background-color: #f2a154;
   border: none;
-  font-size: 20px;
+  font-size: 22px;
   transition: all 0.3s ease;
   margin-bottom: 50px;
 }
@@ -103,4 +122,10 @@
   margin: 20px;
   padding: 10px 30px;
   font-size: 20px;
+}
+.textt {
+  vertical-align: -webkit-baseline-middle;
+}
+h1 {
+  color: black;
 }
