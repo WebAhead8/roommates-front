@@ -9,7 +9,7 @@ function MyProfile() {
 
   // const token = window.localStorage.getItem("access_token");
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxNiwiaWF0IjoxNjE3MTc0NzQ2LCJleHAiOjE2MTcxNzgzNDZ9.0hvh9sL0170F79VaJarOXq3NQz4ura6xJMVu5EyQD9U";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxNiwiaWF0IjoxNjE3MjE1OTgyLCJleHAiOjE2MTcyMTk1ODJ9.y6ZQX5iVANWb1ylLEvBXE18SLL0eKHeWIQ4z6-TTK4k";
 
   async function updateMyProfile() {
     // console.log("nonono");
