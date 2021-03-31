@@ -13,6 +13,7 @@ import MyProfile from "./components/MyProfile";
 import MyNewProfile from "./components/MyNewProfile";
 import Comments from "./components/Comments";
 import FindRoomate from "./components/Find";
+import FilterData from "./components/FilterData";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
           <Route path="/mynewprofile" component={MyNewProfile} />
           <Route path="/comments/:postId" component={Comments} />
           <Route path="/" exact component={Home} />
-          <Route path="/find" exact component={FindRoomate} />
+          <Route path="/find" component={FindRoomate} />
+          <Route path="/filterdata" component={FilterData} />
         </Switch>
       </div>
     </Router>
