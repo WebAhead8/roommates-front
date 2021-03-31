@@ -39,7 +39,19 @@ function AllPosts() {
       {allPosts.map((postData) => (
         <div>
           <ul>
-            <li>{postData.post + "  -- name :" + postData.user_id}</li>
+            <li>
+              <img src={postData.pic} />
+              {"  Name :" + postData.username + "   "} <br />
+              {postData.post}{" "}
+            </li>
+            <button
+              type="submit"
+              onClick={() => {
+                window.location.href = `/comments/${postData.id}`;
+              }}
+            >
+              Comments
+            </button>
             <button
               type="submit"
               onClick={() => {
