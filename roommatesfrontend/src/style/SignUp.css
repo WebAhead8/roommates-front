@@ -1,6 +1,10 @@
-body {
+/* body {
   background-image: url(https://images.pexels.com/photos/2467506/pexels-photo-2467506.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-repeat: no-repeat;
+} */
+
+body {
+  background-color: #363535;
 }
 
 :root {
@@ -30,6 +34,7 @@ body {
 
   background: #a8a6a6;
   opacity: 0.8;
+  padding-top: 45px;
 }
 .form > * {
   margin: 10px auto 5px;
@@ -44,9 +49,10 @@ body {
   font-weight: bold;
   border: none;
   padding: 10px;
-  width: 50%;
+
   transition: all 0.3s ease 0s;
   width: 70%;
+  margin-left: 76px;
 }
 .form button:hover {
   background-color: var(--txt-color);
@@ -64,6 +70,7 @@ body {
 .toto {
   color: #e7e6e1;
   font-size: large;
+  margin-left: 90px;
 }
 .toto a {
   text-decoration: none;
@@ -125,7 +132,10 @@ body {
 }
 .textt {
   vertical-align: -webkit-baseline-middle;
+  margin-left: 100px;
+  font-size: larger;
 }
 h1 {
-  color: black;
+  color: rgb(255, 255, 255);
+  align-content: center;
 }
