@@ -19,7 +19,7 @@ function Comments() {
   const urlGetComments = `http://localhost:4000/comments/${params.postId}`;
   // const token = window.localStorage.getItem("access_token");
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjo1LCJpYXQiOjE2MTY5MjMzNzcsImV4cCI6MTYxNjkyNjk3N30.-6mLWpfwKtQMAtEnCPnRc9h6brKKseEIuhGvSnmDIdA";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxNiwiaWF0IjoxNjE3MjE0NjIxLCJleHAiOjE2MTcyMTgyMjF9.bH84dEatrh_-D0DpW_oiuq2X9bb5BDjSWZIxtiuiN6I";
 
   function HandelChangeAdding(event) {
     setComment(event.target.value);

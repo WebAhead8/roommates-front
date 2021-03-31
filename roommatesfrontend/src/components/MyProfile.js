@@ -9,7 +9,7 @@ function MyProfile() {
 
   // const token = window.localStorage.getItem("access_token");
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxMywiaWF0IjoxNjE3MTQyMjQ3LCJleHAiOjE2MTcxNDU4NDd9.bdPmMhqeh7c0fOa69jr0VOJwvDRUHTSI3GLzrgv-708";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxNiwiaWF0IjoxNjE3MjE1OTgyLCJleHAiOjE2MTcyMTk1ODJ9.y6ZQX5iVANWb1ylLEvBXE18SLL0eKHeWIQ4z6-TTK4k";
 
   async function updateMyProfile() {
     // console.log("nonono");
@@ -248,7 +248,7 @@ function MyProfile() {
             id="price"
           ></input>
         </div>
-        <div>
+        {/* <div>
           password: {}
           <input
             value={myProfileData.pass}
@@ -262,7 +262,7 @@ function MyProfile() {
             name="pass"
             id="pass"
           ></input>
-        </div>
+        </div> */}
 
         <div>
           Traits:{" "}
