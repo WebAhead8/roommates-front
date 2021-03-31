@@ -47,7 +47,7 @@ function FindRoomate() {
           age <= filters.MaxAge &&
           age >= filters.MinAge
         ); //&&
-        // deepEqual(traits === filters.Traits) //deep equal npm
+        deepEqual(traits === filters.Traits); //deep equal npm
       })
     );
   }, [filters]);
@@ -133,7 +133,7 @@ function FindRoomate() {
         <option value="Tel Aviv University">Tel Aviv University </option>
         <option value="University of Haifa">University of Haifa </option>
         <option value="Open University of Israel">Open University of Israel </option>
-        <option value="Ben-Gurion University ">Ben-Gurion University </option>
+        <option value="Ben-Gurion University">Ben-Gurion University </option>
         <option value="Ariel University ">Ariel University </option>
       </select>
 
@@ -179,9 +179,9 @@ function FindRoomate() {
         <label>Organized</label>
         <input onChange={handleFilterChange} type="checkbox" name="Staying up late" />
         <label>Staying up late</label>
-        <input onChange={handleFilterChange} type="checkbox" name="Smokes" />
+        <input onChange={handleFilterChange} type="checkbox" name="Smoke" />
 
-        <label>Smokes</label>
+        <label>Smoke</label>
         <input onChange={handleFilterChange} type="checkbox" name="Social person" />
 
         <label>Social person</label>
