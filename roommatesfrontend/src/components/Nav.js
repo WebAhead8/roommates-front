@@ -1,10 +1,10 @@
 import React from "react";
-
+// className="nav-links"className="nav-links-li"
 function Nav() {
   return (
     <nav>
-      <ul className="nav-links">
-        <li className="nav-links-li">
+      <ul>
+        <li>
           <a href="/login">LogIn</a>
         </li>
         <li>
