@@ -1,5 +1,5 @@
 import React from "react";
-import AllProfiles from "./AllProfiles";
+import FilterData from "./FilterData";
 import getAllProfiles from "../fetches/fetchAllProfiles";
 var deepEqual = require("deep-equal");
 
@@ -33,44 +33,21 @@ function FindRoomate() {
   React.useEffect(() => {
     setAllProfilesData(
       allProfilesDataClone.filter((profile) => {
-        const {
-          gender,
-          currentloc,
-          age,
-          moveto,
-          price,
-          roommatesnum,
-          studying,
-          university,
-          traits,
-        } = profile;
+        const { gender, currentloc, age, moveto, price, roommatesnum, studying, university, traits } = profile;
 
         return (
-          (filters.CurrentLocation.toLowerCase() === "all"
-            ? true
-            : currentloc.toLowerCase() ===
-              filters.CurrentLocation.toLowerCase()) &&
-          (filters.StudyingField.toLowerCase() === "all"
-            ? true
-            : studying.toLowerCase() === filters.StudyingField.toLowerCase()) &&
-          (filters.University.toLowerCase() === "all"
-            ? true
-            : university.toLowerCase() === filters.University.toLowerCase()) &&
-          (filters.Gender.toLowerCase() === "all"
-            ? true
-            : gender.toLowerCase() === filters.Gender.toLowerCase()) &&
-          (filters.MoveTo.toLowerCase() === "all"
-            ? true
-            : moveto.toLowerCase() === filters.MoveTo.toLowerCase()) &&
-          (filters.Roomates.toLowerCase() === "all"
-            ? true
-            : roommatesnum === filters.Roomates) &&
+          (filters.Gender.toLowerCase() === "all" ? true : gender.toLowerCase() === filters.Gender.toLowerCase()) &&
+          (filters.MoveTo.toLowerCase() === "all" ? true : moveto.toLowerCase() === filters.MoveTo.toLowerCase()) &&
+          (filters.University.toLowerCase() === "all" ? true : university.toLowerCase() === filters.University.toLowerCase()) &&
+          (filters.StudyingField.toLowerCase() === "all" ? true : studying.toLowerCase() === filters.StudyingField.toLowerCase()) &&
+          (filters.CurrentLocation.toLowerCase() === "all" ? true : currentloc.toLowerCase() === filters.CurrentLocation.toLowerCase()) &&
+          (filters.Roomates.toLowerCase() === "all" ? true : roommatesnum == filters.Roomates) &&
           price <= filters.MaxPrice &&
           price >= filters.MinPrice &&
           age <= filters.MaxAge &&
-          age >= filters.MinAge //&&
-          // deepEqual(traits === filters.Traits) //deep equal npm
-        );
+          age >= filters.MinAge
+        ); //&&
+        // deepEqual(traits === filters.Traits) //deep equal npm
       })
     );
   }, [filters]);
@@ -80,15 +57,28 @@ function FindRoomate() {
     if (!checked && type === "checkbox") {
       setFilters({
         ...filters,
-
         Traits: filters.Traits.filter((trait) => trait != name),
       });
       return;
     }
-    setFilters({
-      ...filters,
-      [name]: value,
-      ...(type === "checkbox" && { Traits: [...filters.Traits, name] }),
+    // setFilters({
+    //   ...filters,
+    //   [name]: value,
+    //   ...(type === "checkbox" && { Traits: [...filters.Traits, name] }),
+    // });
+
+    setFilters((prev) => {
+      console.log("before", prev);
+      console.log("AFTER", {
+        ...prev,
+        [name]: value,
+        ...(type === "checkbox" && { Traits: [...prev.Traits, name] }),
+      });
+      return {
+        ...prev,
+        [name]: value,
+        ...(type === "checkbox" && { Traits: [...prev.Traits, name] }),
+      };
     });
   }
 
@@ -102,33 +92,13 @@ function FindRoomate() {
       </select>
       <div>
         <label for="minAge">min Age</label>
-        <input
-          onChange={handleFilterChange}
-          type="range"
-          name="MinAge"
-          step="3"
-          min="17"
-          max="32"
-          value={filters.MinAge}
-        />
+        <input onChange={handleFilterChange} type="range" name="MinAge" step="3" min="17" max="32" value={filters.MinAge} />
         <br />
         <label for="maxAge">max Age</label>
-        <input
-          onChange={handleFilterChange}
-          type="range"
-          name="MaxAge"
-          value={filters.MaxAge}
-          step="3"
-          min="32"
-          max="50"
-        />
+        <input onChange={handleFilterChange} type="range" name="MaxAge" value={filters.MaxAge} step="3" min="32" max="50" />
       </div>
       <label>Current Location</label>
-      <select
-        onChange={handleFilterChange}
-        name="CurrentLocation"
-        id="Current Location"
-      >
+      <select onChange={handleFilterChange} name="CurrentLocation" id="Current Location">
         <option value="All">All</option>
         <option value="Ramat-HaGolan District">Ramat-HaGolan District</option>
         <option value="Haifa District">Haifa District </option>
@@ -136,9 +106,7 @@ function FindRoomate() {
         <option value="HaSharon District">HaSharon District</option>
         <option value="Tel Aviv District">Tel Aviv District</option>
         <option value="Jerusalem District">Jerusalem District</option>
-        <option value="Yehuda HaShomron District">
-          Yehuda HaShomron District
-        </option>
+        <option value="Yehuda HaShomron District">Yehuda HaShomron District</option>
         <option value="Beer-Sheva District">Beer-Sheva District</option>
         <option value="Eilat District">Eilat District</option>
       </select>
@@ -146,14 +114,12 @@ function FindRoomate() {
       <select onChange={handleFilterChange} name="MoveTo" id="Move To">
         <option value="All">All</option>
         <option value="Female">Ramat-HaGolan District</option>
-        <option value="Haifa District ">Haifa District </option>
+        <option value="Haifa District">Haifa District </option>
         <option value="Hadera District">Hadera District</option>
         <option value="HaSharon District">HaSharon District</option>
         <option value="Tel Aviv District">Tel Aviv District</option>
         <option value="Jerusalem District">Jerusalem District</option>
-        <option value="Yehuda HaShomron District">
-          Yehuda HaShomron District
-        </option>
+        <option value="Yehuda HaShomron District">Yehuda HaShomron District</option>
         <option value="Beer-Sheva District">Beer-Sheva District</option>
         <option value="Eilat District">Eilat District</option>
       </select>
@@ -161,18 +127,12 @@ function FindRoomate() {
       <select onChange={handleFilterChange} name="University">
         <option value="All">All</option>
         <option value="Technion ">Technion</option>
-        <option value="Hebrew University of Jerusalem ">
-          Hebrew University of Jerusalem{" "}
-        </option>
-        <option value="Weizmann Institute of Science  ">
-          Weizmann Institute of Science{" "}
-        </option>
-        <option value="Bar-Ilan University  ">Bar-Ilan University </option>
-        <option value="Tel Aviv University  ">Tel Aviv University </option>
-        <option value="University of Haifa ">University of Haifa </option>
-        <option value="Open University of Israel ">
-          Open University of Israel{" "}
-        </option>
+        <option value="Hebrew University of Jerusalem">Hebrew University of Jerusalem </option>
+        <option value="Weizmann Institute of Science">Weizmann Institute of Science </option>
+        <option value="Bar-Ilan University">Bar-Ilan University </option>
+        <option value="Tel Aviv University">Tel Aviv University </option>
+        <option value="University of Haifa">University of Haifa </option>
+        <option value="Open University of Israel">Open University of Israel </option>
         <option value="Ben-Gurion University ">Ben-Gurion University </option>
         <option value="Ariel University ">Ariel University </option>
       </select>
@@ -186,38 +146,16 @@ function FindRoomate() {
 
       <div>
         <label for="minPrice">Min price</label>
-        <input
-          onChange={handleFilterChange}
-          type="range"
-          step="250"
-          name="MinPrice"
-          min="0"
-          max="2500"
-          value={filters.MinPrice}
-        />
+        <input onChange={handleFilterChange} type="range" step="250" name="MinPrice" min="0" max="2500" value={filters.MinPrice} />
         <br />
         <label>Max price</label>
-        <input
-          onChange={handleFilterChange}
-          type="range"
-          step="250"
-          name="MaxPrice"
-          value={filters.MaxPrice}
-          min="2500"
-          max="5000"
-        />
+        <input onChange={handleFilterChange} type="range" step="250" name="MaxPrice" value={filters.MaxPrice} min="2500" max="5000" />
       </div>
       <label>Studying Field</label>
-      <select
-        onChange={handleFilterChange}
-        name="StudyingField"
-        id="Studying Field"
-      >
+      <select onChange={handleFilterChange} name="StudyingField" id="Studying Field">
         <option value="All">All</option>
 
-        <option value="Humanities and social science">
-          Humanities and social science
-        </option>
+        <option value="Humanities and social science">Humanities and social science</option>
         <option value="Natural sciences">Natural sciences</option>
         <option value="Mathematics">Mathematics</option>
         <option value="Computer sciences">Computer sciences</option>
@@ -233,35 +171,18 @@ function FindRoomate() {
       <h1>Traits</h1>
 
       <div>
-        <input
-          onChange={handleFilterChange}
-          type="checkbox"
-          value="Quit"
-          name="Quit"
-        />
+        <input onChange={handleFilterChange} type="checkbox" value="Quit" name="Quit" />
         <label>Quit</label>
-        <input
-          onChange={handleFilterChange}
-          type="checkbox"
-          name="Studying loudly"
-        />
+        <input onChange={handleFilterChange} type="checkbox" name="Studying loudly" />
         <label>Studying loudly</label>
         <input onChange={handleFilterChange} type="checkbox" name="Organized" />
         <label>Organized</label>
-        <input
-          onChange={handleFilterChange}
-          type="checkbox"
-          name="Staying up late"
-        />
+        <input onChange={handleFilterChange} type="checkbox" name="Staying up late" />
         <label>Staying up late</label>
         <input onChange={handleFilterChange} type="checkbox" name="Smokes" />
 
         <label>Smokes</label>
-        <input
-          onChange={handleFilterChange}
-          type="checkbox"
-          name="Social person"
-        />
+        <input onChange={handleFilterChange} type="checkbox" name="Social person" />
 
         <label>Social person</label>
         <input onChange={handleFilterChange} type="checkbox" name="Have pets" />
@@ -271,7 +192,7 @@ function FindRoomate() {
       </div>
 
       {/* <AllPosts> */}
-      <AllProfiles allProfilesData={allProfilesData} />
+      <FilterData allProfilesData={allProfilesData} />
     </div>
   );
 }
