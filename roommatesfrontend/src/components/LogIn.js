@@ -95,7 +95,14 @@ function Login() {
           Don't have an account? <a href="/signup">Sign Up</a>
         </i>
         <i className="error">{worrning}</i>
-        <button type="submit">Login</button>
+        <button
+          type="submit"
+          onClick={() => {
+            window.location.href = `/`;
+          }}
+        >
+          Login{" "}
+        </button>
       </form>
     </div>
   );
