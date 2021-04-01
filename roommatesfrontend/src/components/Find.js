@@ -1,7 +1,8 @@
 import React from "react";
 import FilterData from "./FilterData";
 import getAllProfiles from "../fetches/fetchAllProfiles";
-import "../style/SignUp.css";
+import "../App.css";
+
 import "../style/find.css";
 import deepEqual from "deep-equal";
 
@@ -92,7 +93,7 @@ function FindRoomate() {
           <input onChange={handleFilterChange} type="range" name="MaxAge" value={filters.MaxAge} step="3" min="32" max="50" />
         </div>
         <label>Current Location</label>
-        <select onChange={handleFilterChange} name="CurrentLocation" id="Current Location">
+        <select onChange={handleFilterChange} name="CurrentLocation">
           <option value="All">All</option>
           <option value="Ramat-HaGolan District">Ramat-HaGolan District</option>
           <option value="Haifa District">Haifa District </option>
@@ -140,7 +141,16 @@ function FindRoomate() {
 
         <div>
           <label for="minPrice">Min price</label>
-          <input onChange={handleFilterChange} type="range" step="250" name="MinPrice" min="0" max="2500" value={filters.MinPrice} />
+          <input
+            className="filterinput"
+            onChange={handleFilterChange}
+            type="range"
+            step="250"
+            name="MinPrice"
+            min="0"
+            max="2500"
+            value={filters.MinPrice}
+          />
           <br />
           <label>Max price</label>
           <input onChange={handleFilterChange} type="range" step="250" name="MaxPrice" value={filters.MaxPrice} min="2500" max="5000" />
