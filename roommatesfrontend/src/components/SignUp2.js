@@ -43,26 +43,29 @@ function SignUp2() {
   }
 
   return (
-    <div>
-      <form onSubmit={handelClick} className="formm">
-        <label>
-          <h3>Few More Steps...</h3>
-          <br></br>
-        </label>
-        <label>Gender</label>
-        <select onChange={handelChange} name="gender">
+    <form onSubmit={handelClick} className="formm">
+      <label>
+        <h3>Few More Steps...</h3>
+      </label>
+      <div>
+        <label>Your Gender</label>
+        <select onChange={handelChange}>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
-        <div>
-          <input
-            type="age"
-            placeholder="Age"
-            onChange={handelChange}
-            name="age"
-            required
-          />
-        </div>
+      </div>
+      <div>
+        <label>Your Age</label>
+        <input
+          className="inputt "
+          type="age"
+          placeholder="Age"
+          onChange={handelChange}
+          name="age"
+          required
+        />
+      </div>
+      <div>
         <label>Current Location</label>
         <select onChange={handelChange} name="currentloc">
           <option value="Ramat-HaGolan District">Ramat-HaGolan District</option>
@@ -77,6 +80,8 @@ function SignUp2() {
           <option value="Beer-Sheva District">Beer-Sheva District</option>
           <option value="Eilat District">Eilat District</option>
         </select>
+      </div>
+      <div>
         <label>Move To</label>
         <select onChange={handelChange} name="moveto">
           <option value="Female">Ramat-HaGolan District</option>
@@ -91,6 +96,8 @@ function SignUp2() {
           <option value="Beer-Sheva District">Beer-Sheva District</option>
           <option value="Eilat District">Eilat District</option>
         </select>
+      </div>
+      <div>
         <label>University</label>
         <select onChange={handelChange} name="university">
           <option value="Technion">Technion</option>
@@ -109,22 +116,26 @@ function SignUp2() {
           <option value="Ben-Gurion University ">Ben-Gurion University </option>
           <option value="Ariel University ">Ariel University </option>
         </select>
-
-        <label>Roommates</label>
+      </div>
+      <div>
+        <label>Roommates Number</label>
         <select onChange={handelChange} name="roommatesnum">
           <option value="0">0</option>
           <option value="1">1</option>
         </select>
-
-        <div>
-          <input
-            type="price"
-            placeholder="price"
-            onChange={handelChange}
-            name="price"
-            required
-          />
-        </div>
+      </div>
+      <div>
+        <label>Price For Room</label>
+        <input
+          type="price"
+          className="inputt "
+          placeholder="price"
+          onChange={handelChange}
+          name="price"
+          required
+        />
+      </div>
+      <div>
         <label>Studying Field</label>
         <select onChange={handelChange} name="studying">
           <option value="Humanities and social science">
@@ -141,33 +152,36 @@ function SignUp2() {
           <option value="Art">Art</option>
           <option value="Social Work">Social Work</option>
         </select>
+      </div>
+      <div>
+        <label>
+          <br></br>Traits
+        </label>
+        <input type="checkbox" name="Quit" />
+        <label>Quit</label>
+        <input type="checkbox" name="Studying loudly" />
+        <label>Studying loudly</label>
+        <input type="checkbox" name="Organized" />
+        <br></br>
+        <label>Organized</label>
+        <input type="checkbox" name="Staying up late" />
+        <label>Staying up late</label>
+        <input type="checkbox" name="Smokes" />
+        <label>Smokes</label>
+        <input type="checkbox" name="Social person" />
+        <br></br>
+        <label>Social person</label>
+        <input type="checkbox" name="Have pets" />
 
-        <h1>Traits</h1>
-
-        <div>
-          <input type="checkbox" name="Quit" />
-          <label>Quit</label>
-          <input type="checkbox" name="Studying loudly" />
-          <label>Studying loudly</label>
-          <input type="checkbox" name="Organized" />
-          <label>Organized</label>
-          <input type="checkbox" name="Staying up late" />
-          <label>Staying up late</label>
-          <input type="checkbox" name="Smokes" />
-
-          <label>Smokes</label>
-          <input type="checkbox" name="Social person" />
-
-          <label>Social person</label>
-          <input type="checkbox" name="Have pets" />
-          <label>Have pets</label>
-          <input type="checkbox" name="Cooks" />
-          <label>Cooks</label>
-        </div>
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+        <label>Have pets</label>
+        <input type="checkbox" name="Cooks" />
+        <label>Cooks</label>
+      </div>
+      <br></br>
+      <button className="buttonn" type="submit">
+        Submit
+      </button>
+    </form>
   );
 }
 
