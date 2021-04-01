@@ -7,14 +7,6 @@ img {
   border-radius: 10px;
 }
 
-/* .myprofile { */
-/* Rectangle 59 */
-
-/* position: absolute; */
-/* width: 394px;
-  height: 527px; */
-/* left: 3px; */
-/* top: 330px;
-
-  background: #121111;
-} */
+* {
+  color: black;
+}
