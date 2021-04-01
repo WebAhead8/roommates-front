@@ -45,12 +45,12 @@ body {
 .form button {
   margin-top: 10px;
   background-color: var(--text-light);
+  transition: all 0.3s ease 0s;
   color: var(--bg-color);
   font-weight: bold;
   border: none;
   padding: 10px;
 
-  transition: all 0.3s ease 0s;
   width: 70%;
   margin-left: 76px;
 }
@@ -138,4 +138,50 @@ body {
 h1 {
   color: rgb(255, 255, 255);
   align-content: center;
+}
+
+.formm {
+  padding-left: 70px;
+  margin: auto;
+  display: block;
+  width: 500px;
+  height: 700px;
+  /* left: 380px; */
+  /* top: 212px; */
+  margin-top: 10%;
+  margin-bottom: 10%;
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+
+  background: #a8a6a6;
+  opacity: 0.8;
+  padding-top: 45px;
+}
+
+select {
+  display: flex;
+  padding-top: 10px;
+  width: 70%;
+  border: none;
+  border-radius: 3.5px;
+}
+
+.inputt {
+  display: flex;
+  padding-top: 10px;
+  width: 68.7%;
+  border: none;
+  border-radius: 3.5px;
+}
+
+.buttonn {
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  width: 70%;
+  background-color: var(--text-light);
+  transition: all 0.3s ease 0s;
+  color: var(--bg-color);
+  transition: all 0.3s ease 0s;
 }
